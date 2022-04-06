@@ -1,9 +1,9 @@
 
-# Resource Group Variables
-variable "resource_group_name" {
-  type        = string
-  description = "Existing resource group where the IKS cluster will be provisioned."
-}
+# # Resource Group Variables
+# variable "resource_group_name" {
+#   type        = string
+#   description = "Existing resource group where the IKS cluster will be provisioned."
+# }
 
 variable "ibmcloud_api_key" {
   type        = string
@@ -86,4 +86,9 @@ variable "kubeseal_namespace" {
   default = "sealed-secrets"
 }
 
-variable "cp_entitlement_key" {}
+variable "entitlement_key" {}
+
+variable "login_token" {
+}
+
+

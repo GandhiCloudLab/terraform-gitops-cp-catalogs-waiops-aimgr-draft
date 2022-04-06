@@ -1,4 +1,4 @@
-name: gitops-cp-catalogs-waiops-aimgr
+name: gitops-cp-catalogs-waiops
 type: terraform
 description: Module to populate a gitops repository with the resources needed to install the operator catalogs required to install IBM Cloud Paks Watson AIOps AI-Manager.
 tags:

@@ -5,8 +5,8 @@
 
      environment = {
        OUTPUT = jsonencode({
-         catalog_ibmoperators-waiops-aimgr    = module.gitops_cp_catalogs_waiops.catalog_ibmoperators-waiops-aimgr
-         catalog_ibmoperators-waiops-eventmgr = module.gitops_cp_catalogs_waiops.catalog_ibmoperators-waiops-eventmgr
+         catalog_ibmoperators-waiops-aimgr    = module.gitops_cp_catalogs_waiops.catalog_ibmoperators_waiops_aimgr
+         catalog_ibmoperators-waiops-eventmgr = module.gitops_cp_catalogs_waiops.catalog_ibmoperators_waiops_eventmgr
        })
      }
    }

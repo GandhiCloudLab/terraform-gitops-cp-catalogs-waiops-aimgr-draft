@@ -66,6 +66,7 @@ deployment/03-mcm-dev/build/test.sh
 ### software everywhere - terraform
 /test/stages/.terraform/*
 /.terraform/*
+/test/stages/.bin_dir
 /test/stages/.tmp/*
 /test/stages/bin/*
 /test/stages/bin2/*
@@ -88,3 +89,4 @@ deployment/03-mcm-dev/build/test.sh
 /test/stages/.terraform.tfstate.lock.info
 /test/stages/terraform.tfstate.backup
 /test/stages/.namespace
+/test/stages/test_bin_dir
