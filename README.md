@@ -1,4 +1,4 @@
-# IBM Cloud Pak for Watson AIOps AI-Manager Operator Catalog module
+# IBM Cloud Pak for Watson AIOps Operator Catalog module
 
 Module to populate a gitops repository with the resources needed to install the operator catalogs required to install IBM Cloud Pak for Watson AIOps components such as AI-Manager, Event Manager and Infra Automation. 
 
@@ -31,6 +31,7 @@ This module makes use of the output from other modules:
 
 ```hcl-terraform
 module "gitops_cp_catalogs_waiops" {
+  
   source = "github.com/cloud-native-toolkit/terraform-gitops-cp-catalogs-waiops"
 
 }
