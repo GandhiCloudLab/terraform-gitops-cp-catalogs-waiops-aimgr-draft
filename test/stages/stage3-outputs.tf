@@ -5,11 +5,8 @@
 
      environment = {
        OUTPUT = jsonencode({
-         name        = module.ibm-cp-catalogs-waiops-aimgr.name
-         branch      = module.ibm-cp-catalogs-waiops-aimgr.branch
-         layer       = module.ibm-cp-catalogs-waiops-aimgr.layer
-         layer_dir   = module.ibm-cp-catalogs-waiops-aimgr.layer == "infrastructure" ? "1-infrastructure" : (module.cp4s.layer == "services" ? "2-services" : "3-applications")
-         type        = module.ibm-cp-catalogs-waiops-aimgr.type
+         catalog_ibmoperators-waiops-aimgr    = module.gitops_cp_catalogs_waiops.catalog_ibmoperators-waiops-aimgr
+         catalog_ibmoperators-waiops-eventmgr = module.gitops_cp_catalogs_waiops.catalog_ibmoperators-waiops-eventmgr
        })
      }
    }

@@ -1,0 +1,10 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: CatalogSource
+metadata:
+  name: noi-operator-catalog
+  namespace: openshift-marketplace
+spec:
+  displayName: noi-operator-catalog
+  publisher: IBM Content
+  sourceType: grpc
+  image:  icr.io/cpopen/noi-operator-catalog:latest

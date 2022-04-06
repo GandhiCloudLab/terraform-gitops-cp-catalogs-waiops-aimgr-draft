@@ -1,5 +1,5 @@
 locals {
-  name          = "ibm-cp-catalogs-waiops-aimgr"
+  name          = "ibm-cp-catalogs-waiops"
   bin_dir       = module.setup_clis.bin_dir
   tmp_dir       = "${path.cwd}/.tmp/${local.name}"
   secret_dir    = "${local.tmp_dir}/secrets"
@@ -8,7 +8,6 @@ locals {
 
   layer = "infrastructure"
   secret_name  = "ibm-entitlement-key"
-  catalog_name = "ibm-operator-catalog"
   application_branch = "main"
   layer_config = var.gitops_config[local.layer]
 }

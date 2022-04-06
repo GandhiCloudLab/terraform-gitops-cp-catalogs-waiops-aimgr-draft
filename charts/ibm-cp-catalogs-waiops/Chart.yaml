@@ -1,6 +1,6 @@
 apiVersion: v2
-name: ibm-cp-catalogs-waiops-aimgr
-description: A Helm chart for in install the IBM Cloud Pak for Watson AIOps AI-Manager CP Catalog
+name: ibm-cp-catalogs-waiops
+description: A Helm chart for in install the IBM Cloud Pak for Watson AIOps Operator Catalog
 type: application
 version: 0.1.1
 appVersion: "1.0"

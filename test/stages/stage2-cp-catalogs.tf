@@ -1,4 +1,4 @@
-module "gitops_cp_catalogs" {
+module "gitops_cp_catalogs_waiops" {
   source = "./module"
 
   gitops_config = module.gitops.gitops_config
