@@ -1,0 +1,124 @@
+name: gitops-cp-catalogs-waiops
+type: terraform
+description: >-
+  Module to populate a gitops repository with the resources needed to install
+  the operator catalogs required to install IBM Cloud Paks Watson AIOps
+  AI-Manager.
+tags:
+  - tools
+  - gitops
+  - IBM
+  - cloud pak
+  - catalog
+  - operators
+versions:
+  - platforms:
+      - ocp4
+    dependencies:
+      - id: gitops
+        refs:
+          - source: github.com/cloud-native-toolkit/terraform-tools-gitops.git
+            version: '>= 1.1.0'
+    variables:
+      - name: gitops_config
+        type: |-
+          object({
+              boostrap = object({
+                argocd-config = object({
+                  project = string
+                  repo = string
+                  url = string
+                  path = string
+                })
+              })
+              infrastructure = object({
+                argocd-config = object({
+                  project = string
+                  repo = string
+                  url = string
+                  path = string
+                })
+                payload = object({
+                  repo = string
+                  url = string
+                  path = string
+                })
+              })
+              services = object({
+                argocd-config = object({
+                  project = string
+                  repo = string
+                  url = string
+                  path = string
+                })
+                payload = object({
+                  repo = string
+                  url = string
+                  path = string
+                })
+              })
+              applications = object({
+                argocd-config = object({
+                  project = string
+                  repo = string
+                  url = string
+                  path = string
+                })
+                payload = object({
+                  repo = string
+                  url = string
+                  path = string
+                })
+              })
+            })
+        description: Config information regarding the gitops repo structure
+        moduleRef:
+          id: gitops
+          output: gitops_config
+      - name: git_credentials
+        type: |-
+          list(object({
+              repo = string
+              url = string
+              username = string
+              token = string
+            }))
+        description: The credentials for the gitops repo(s)
+        moduleRef:
+          id: gitops
+          output: git_credentials
+      - name: namespace
+        type: string
+        description: The namespace where the application should be deployed
+        default: openshift-marketplace
+      - name: kubeseal_cert
+        type: string
+        description: The certificate/public key used to encrypt the sealed secrets
+        default: ''
+        moduleRef:
+          id: gitops
+          output: sealed_secrets_cert
+      - name: server_name
+        type: string
+        description: The name of the server
+        default: default
+        moduleRef:
+          id: gitops
+          output: server_name
+      - name: entitlement_key
+        type: string
+        description: >-
+          The entitlement key used to access the CP4WAIOps images in the
+          container registry. Visit
+          https://myibm.ibm.com/products-services/containerlibrary to get the
+          key
+        sensitive: true
+    version: v1.0.0
+    outputs:
+      - name: catalog_ibmoperators_waiops_aimgr
+        description: IBM Operator Catalog name AI Manager
+      - name: catalog_ibmoperators_waiops_eventmgr
+        description: IBM Operator Catalog name Event Manager
+      - name: entitlement_key
+        description: Entitlement key
+id: github.com/GandhiCloudLab/terraform-gitops-cp-catalogs-waiops-aimgr-draft
